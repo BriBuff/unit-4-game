@@ -1,5 +1,9 @@
 body {
     background: black;
-    color: purple;
+}
+
+section {
+    background: lightblue;
+    color: black;
 }
 
