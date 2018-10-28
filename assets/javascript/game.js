@@ -38,15 +38,19 @@ function run () {
         rainbowHeart.val(crystalButtons);
     })
 
-    userCounter += crystalButtons
-    
-    if (userNumber === computerNumber) {
-        win++;
-    }
 
-    else if(userNumber >= computerNumber) {
-        lose++;
-    }
+    // Possibly a for loop/function with all the buttons to get
+    // the numbers to add up once the crystal has been pressed.
+    // Needed to make the if/else if statement work to produce wins/losses. 
+    // userCounter += crystalButtons
+    
+    // if (userNumber === computerNumber) {
+    //     win++;
+    // }
+
+    // else if(userNumber >= computerNumber) {
+    //     lose++;
+    // }
 
 
     userNumber.textContent = "Player's number: " + userNumber;
