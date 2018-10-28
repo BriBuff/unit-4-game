@@ -2,9 +2,14 @@ body {
     background: black;
 }
 
+h1, h2 {
+    font-weight: bold;
+}
+
 section {
     background: lightblue;
     color: black;
+    padding-left: 5px;
 }
 
 #head {
@@ -20,4 +25,5 @@ section {
 #variables {
     width: 300px;
     height: 150px;
+    font-weight: bold;
 }
