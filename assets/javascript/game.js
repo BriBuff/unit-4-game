@@ -41,15 +41,17 @@ function run () {
 
     // Possibly a for loop/function with all the buttons to get
     // the numbers to add up once the crystal has been pressed.
-    // Needed to make the if/else if statement work to produce wins/losses. 
+    // Needed to make the if/else if statement work to produce wins/losses/reset. 
     // userCounter += crystalButtons
     
     // if (userNumber === computerNumber) {
     //     win++;
+    //  reset();
     // }
 
     // else if(userNumber >= computerNumber) {
     //     lose++;
+    //     reset ();
     // }
 
 
@@ -60,6 +62,8 @@ function run () {
 }
 
 run()
+
+// reset()
 
 
 
