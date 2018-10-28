@@ -41,11 +41,11 @@ function run () {
     userCounter += crystalButtons
     
     if (userNumber === computerNumber) {
-        wins++;
+        win++;
     }
 
     else if(userNumber >= computerNumber) {
-        losses++;
+        lose++;
     }
 
 
