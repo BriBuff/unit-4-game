@@ -1,70 +1,69 @@
 var win = 0;
 var lose = 0;
 var userCounter = 0;
+var computerNumber = 0;
  
-var crystalButtons = Math.floor(Math.random() * 12) + 1;
-var blueHeart, purpleHeart, redHeart, rainbowHeart
-
 var computerGuess = document.getElementById("randomNumber");
-var userNumber = document.getElementById("usernumber");
+var userNumber = document.getElementById("userNumber");
 var wins = document.getElementById("wins");
 var losses = document.getElementById("losses");
 
-
-function run () {
-
-    function computerNumber (a, b) {
-        var computerNumber = computerGuess
-        return Math.floor(Math.random() * (b - a +1) ) + 19;
-    }
-
-    computerGuess.textContent = "Random Number: "  + computerNumber(19, 121);
-
-
- 
-    $("#blue.heart").on("click", function () {
-        blueHeart.val(crystalButtons);
-    })
-
-    $("#purple.heart").on("click", function() {
-        purpleHeart.val(crystalButtons);
-    })
-
-    $("#red.heart").on("click", function() {
-        redHeart.val(crystalButtons);
-    })
-
-    $("rainbow.heart").on("click", function() {
-        rainbowHeart.val(crystalButtons);
-    })
-
-
-    // Possibly a for loop/function with all the buttons to get
-    // the numbers to add up once the crystal has been pressed.
-    // Needed to make the if/else if statement work to produce wins/losses/reset. 
-    // userCounter += crystalButtons
-    
-    // if (userNumber === computerNumber) {
-    //     win++;
-    //  reset();
-    // }
-
-    // else if(userNumber >= computerNumber) {
-    //     lose++;
-    //     reset ();
-    // }
-
-
-    userNumber.textContent = "Player's number: " + userNumber;
-    wins.textContent = "Win: " + win;
-    losses.textContent = "Losses: " + lose;
-
+function randomScore () {
+computerNumber = (Math.floor(Math.random() * 102) + 19)
+computerGuess.textContent = "Random Number: "  + computerNumber;
+$("#blueHeart").attr("dataNum", Math.floor(Math.random() * 12) + 1);
+$("#purpleHeart").attr("dataNum", Math.floor(Math.random() * 12) + 1);
+$("#redHeart").attr("dataNum", Math.floor(Math.random() * 12) + 1);
+$("#rainbowHeart").attr("dataNum", Math.floor(Math.random() * 12) + 1);
+userCounter = 0;
 }
 
-run()
+randomScore();
 
-// reset()
+    $("#blueHeart").on("click", function () {
+        console.log("blue", $(this).attr("dataNum"));
+        console.log(this);
+        addScore($(this).attr("dataNum"));
+    })
 
+    $("#purpleHeart").on("click", function() {
+        console.log("purple", $(this).attr("dataNum"));
+        addScore($(this).attr("dataNum"));
+    })
+
+    $("#redHeart").on("click", function() {
+        console.log("red", $(this).attr("dataNum"));
+        addScore($(this).attr("dataNum"));
+    })
+
+    $("#rainbowHeart").on("click", function() {
+        console.log("rainbow", $(this).attr("dataNum"));
+        addScore($(this).attr("dataNum"));
+    })
+
+    function addScore (num) {
+        userCounter += parseInt(num);
+        console.log(userCounter);
+        userNumber.textContent = "Number: " + userCounter;
+    
+
+
+    console.log(computerNumber);
+    if (userCounter === computerNumber) {
+        win++;
+        console.log("win");
+        wins.textContent = "Win: " + win;
+        randomScore();
+    }
+
+    else if (userCounter >= computerNumber) {
+        lose++;
+        console.log("lose");
+        losses.textContent = "Lose: " + lose;
+        randomScore();
+    }
+
+}
 
 
 
