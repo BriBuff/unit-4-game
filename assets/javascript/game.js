@@ -44,7 +44,7 @@ randomScore();
     function addScore (num) {
         userCounter += parseInt(num);
         console.log(userCounter);
-        userNumber.textContent = "Number: " + userCounter;
+        userNumber.textContent = userCounter;
     
 
 
@@ -52,14 +52,14 @@ randomScore();
     if (userCounter === computerNumber) {
         win++;
         console.log("win");
-        wins.textContent = "Win: " + win;
+        wins.textContent = win;
         randomScore();
     }
 
     else if (userCounter >= computerNumber) {
         lose++;
         console.log("lose");
-        losses.textContent = "Lose: " + lose;
+        losses.textContent = lose;
         randomScore();
     }
 
